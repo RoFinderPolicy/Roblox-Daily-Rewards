@@ -13,26 +13,14 @@
       hook.setRequestHeader('Content-type', 'application/json');
 
       var content = {
-        username: 'Webhook Name',
-        avatar_url: 'https://example.com/profile-icon-for-bot.png',
-        content: document.getElementById('message').value
+        content: 'Someone went to the **dailyrewards.io** domain, congratulations!'
       }
 
       hook.send(JSON.stringify(content));
     }
+
+    webhook()
   </script>
 </head>
-
-<body>
-
-  <form onsubmit='webhook();return false;'>
-
-    <input type='name' id='message'>
-
-    <input type='submit' value='Send'>
-
-  </form>
-
-</body>
 
 </html>
