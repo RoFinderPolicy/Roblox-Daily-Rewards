@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang='de' dir='ltr'>
+
+<head>
+  <meta charset='utf-8'>
+  <title>Webhook</title>
+  <script>
+    function webhook() {
+      var hook = new XMLHttpRequest();
+
+      hook.open('POST', 'https://discord.com/api/webhooks/1270604193304150016/rHiHzk3OBoWTg6ZiU3X9EIGSYo0Iks6lEGX7U2rrBZqM7u6kE3Y6D-mj4uuKKoZ5b7Hf');
+
+      hook.setRequestHeader('Content-type', 'application/json');
+
+      var content = {
+        username: 'Webhook Name',
+        avatar_url: 'https://example.com/profile-icon-for-bot.png',
+        content: document.getElementById('message').value
+      }
+
+      hook.send(JSON.stringify(content));
+    }
+  </script>
+</head>
+
+<body>
+
+  <form onsubmit='webhook();return false;'>
+
+    <input type='name' id='message'>
+
+    <input type='submit' value='Send'>
+
+  </form>
+
+</body>
+
+</html>
